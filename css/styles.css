@@ -60,11 +60,11 @@ input[type="checkbox"] + label span {
   height: 16px;
   margin: -2px 6px 0 0;
   vertical-align: middle;
-  background: url(http://cjhooker.github.io/eote-dice-roller-qa/images/checkbox-unchecked.png) left top no-repeat;
+  background: url(https://cjhooker.github.io/eote-dice-roller-qa/images/checkbox-unchecked.png) left top no-repeat;
   cursor: pointer;
 }
 input[type="checkbox"]:checked + label span {
-  background: url(http://cjhooker.github.io/eote-dice-roller-qa/images/checkbox-checked.png) left top no-repeat;
+  background: url(https://cjhooker.github.io/eote-dice-roller-qa/images/checkbox-checked.png) left top no-repeat;
 }
 /* Specific Sections */
 #container {
