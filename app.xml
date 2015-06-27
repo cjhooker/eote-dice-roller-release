@@ -21,34 +21,34 @@
   <![CDATA[ 
     <html ng-controller="appController">
 <head>
-    <link rel="stylesheet" type="text/css" href="https://cjhooker.github.io/eote-dice-roller-qa/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="https://cjhooker.github.io/eote-dice-roller-release/css/styles.css">
     <script src="//plus.google.com/hangouts/_/api/v1/hangout.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular-sanitize.js"></script>
 
-    <script src="https://cjhooker.github.io/eote-dice-roller-qa/js/modules.js"></script>
-    <script src="https://cjhooker.github.io/eote-dice-roller-qa/js/filters.js"></script>
-    <script src="https://cjhooker.github.io/eote-dice-roller-qa/js/controllers/app-controller.js"></script>
-    <script src="https://cjhooker.github.io/eote-dice-roller-qa/js/directives/die-container.js"></script>
-    <script src="https://cjhooker.github.io/eote-dice-roller-qa/js/directives/message-display.js"></script>
-    <script src="https://cjhooker.github.io/eote-dice-roller-qa/js/services/dice-service.js"></script>
-    <script src="https://cjhooker.github.io/eote-dice-roller-qa/js/services/message-service.js"></script>
-    <script src="https://cjhooker.github.io/eote-dice-roller-qa/js/services/setting-service.js"></script>
+    <script src="https://cjhooker.github.io/eote-dice-roller-release/js/modules.js"></script>
+    <script src="https://cjhooker.github.io/eote-dice-roller-release/js/filters.js"></script>
+    <script src="https://cjhooker.github.io/eote-dice-roller-release/js/controllers/app-controller.js"></script>
+    <script src="https://cjhooker.github.io/eote-dice-roller-release/js/directives/die-container.js"></script>
+    <script src="https://cjhooker.github.io/eote-dice-roller-release/js/directives/message-display.js"></script>
+    <script src="https://cjhooker.github.io/eote-dice-roller-release/js/services/dice-service.js"></script>
+    <script src="https://cjhooker.github.io/eote-dice-roller-release/js/services/message-service.js"></script>
+    <script src="https://cjhooker.github.io/eote-dice-roller-release/js/services/setting-service.js"></script>
 
-    <script src="https://cjhooker.github.io/eote-dice-roller-qa/js/utilities.js"></script>
+    <script src="https://cjhooker.github.io/eote-dice-roller-release/js/utilities.js"></script>
 
     <!-- Angular Templates -->
 
     <!-- Template for display of dice controls -->
     <script type="text/ng-template" id="die-container.html">
         <div class="die-container">
-            <img ng-src="https://cjhooker.github.io/eote-dice-roller-qa/images/{{color}}.png" class="die-button" id="roll{{color}}" alt="{{color}} die" 
+            <img ng-src="https://cjhooker.github.io/eote-dice-roller-release/images/{{color}}.png" class="die-button" id="roll{{color}}" alt="{{color}} die" 
                  ng-click="clearQty()" ng-if="color!='Numeric'" />
             <input type="text" class="numeric-die-type" ng-model="numericDieType" ng-if="color=='Numeric'" />
             <span class="qty-text-box">{{quantity}}</span>
             <div class="arrow-container">
-                <img class="arrow-up" src="https://cjhooker.github.io/eote-dice-roller-qa/images/arrow-up.png" alt="{{color}} +1" ng-click="changeQty(1)" />
-                <img class="arrow-down" src="https://cjhooker.github.io/eote-dice-roller-qa/images/arrow-down.png" alt="{{color}} -1" ng-click="changeQty(-1)" />
+                <img class="arrow-up" src="https://cjhooker.github.io/eote-dice-roller-release/images/arrow-up.png" alt="{{color}} +1" ng-click="changeQty(1)" />
+                <img class="arrow-down" src="https://cjhooker.github.io/eote-dice-roller-release/images/arrow-down.png" alt="{{color}} -1" ng-click="changeQty(-1)" />
             </div>
         </div>
     </script>
@@ -61,13 +61,13 @@
             </div>
             <div class='results-wrapper' ng-if="message.type == 'roll'">
                 <div class='dice-results'>
-                    <img class='symbol' ng-src='https://cjhooker.github.io/eote-dice-roller-qa/images/{{dieResult.die}}-{{dieResult.result}}.png'
+                    <img class='symbol' ng-src='https://cjhooker.github.io/eote-dice-roller-release/images/{{dieResult.die}}-{{dieResult.result}}.png'
                          alt="{{dieResult.die|dieName}} {{dieResult.result|dieResultSummary}}"
                          ng-if="dieResult.die != 'N'" ng-repeat="dieResult in message.data.diceResults" />
                     <span class="numeric-result" ng-repeat="dieResult in message.data.diceResults" ng-if="dieResult.die == 'N'">{{dieResult.result}}</span>
                 </div>
                 <div class='overall-results' title="{{message.data.overallResult|dieResultSummary}}">
-                    <img class='symbol' ng-src='https://cjhooker.github.io/eote-dice-roller-qa/images/{{symbols[result]}}' alt="{{result|symbolName}}" 
+                    <img class='symbol' ng-src='https://cjhooker.github.io/eote-dice-roller-release/images/{{symbols[result]}}' alt="{{result|symbolName}}" 
                          ng-repeat="result in message.data.overallResult track by $index" />
                 </div>
             </div>
@@ -84,7 +84,7 @@
             <div id="headerInner">
                 <div id="destinyTracker">
                     <div id="destinyTokenContainer">
-                        <img ng-src='https://cjhooker.github.io/eote-dice-roller-qa/images/destiny-{{destinyChar|destinyType}}.png' alt="Destiny {{destinyChar|destinyType}}" class='destiny-token' ng-click='toggleDestiny($index)'
+                        <img ng-src='https://cjhooker.github.io/eote-dice-roller-release/images/destiny-{{destinyChar|destinyType}}.png' alt="Destiny {{destinyChar|destinyType}}" class='destiny-token' ng-click='toggleDestiny($index)'
                              ng-repeat="destinyChar in destiny track by $index" />
                         <div id="destinyWatermark" ng-show="!destiny">DESTINY</div>
                     </div>
@@ -134,11 +134,11 @@
 
                 <input class="button" type="button" value="Insert Break Line" id="insertBreak" ng-click="insertBreak()" />
 
-                <img class="settings-button" src="https://cjhooker.github.io/eote-dice-roller-qa/images/settings-blue.png" alt="Settings" ng-click="toggleSettingsDisplay()" />
+                <img class="settings-button" src="https://cjhooker.github.io/eote-dice-roller-release/images/settings-blue.png" alt="Settings" ng-click="toggleSettingsDisplay()" />
             </div>
         </div>
     </div>
-    <script src="https://cjhooker.github.io/eote-dice-roller-qa/js/hangout-init.js"></script>
+    <script src="https://cjhooker.github.io/eote-dice-roller-release/js/hangout-init.js"></script>
 </body>
 </html>    
   ]]>
