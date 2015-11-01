@@ -85,6 +85,8 @@ input[type="checkbox"]:checked + label span {
     height: 100%;
     width: 300px;
     float: right;
+    overflow: hidden;
+    background-color: #ffffff;
 }
 
 #header {
@@ -241,7 +243,7 @@ input[type="checkbox"]:checked + label span {
         height: 100%;
         width: 100%;
         overflow: auto;
-        background-color: #fff;
+        background-color: #ffffff;
 
         .alert {
             color: red;
@@ -377,12 +379,38 @@ input[type="checkbox"]:checked + label span {
 }
 
 #settings-container {
-    padding: 5px;
+    padding: 10px;
+
+    select {
+        height: 30px;
+        font-size: 16px;
+    }
+
+    .settings-item {
+        margin-bottom: 20px;
+    }
 
     .settings-label {
         font-weight: bold;
         margin-right: 10px;
     }
+
+    #settings-close {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        cursor: pointer;
+    }
+}
+
+.debugWatermark {
+    position: absolute;
+    right: 15px;
+    bottom: 35px;
+    font-size: 35px;
+    font-weight: bold;
+    opacity: 0.1;
+    color: #FF0000;
 }
 
 #footer {
@@ -416,4 +444,21 @@ input[type="checkbox"]:checked + label span {
             cursor: pointer;
         }
     }
+}
+
+/*** Animations ***/
+
+.slide-down-animation.ng-hide-add,
+.slide-down-animation.ng-hide-remove {
+    display: block !important;
+}
+
+.slide-down-animation {
+    -webkit-transition: 0.3s linear all;
+    transition: 0.3s linear all;
+    top: @headerHeight;
+}
+
+.slide-down-animation.ng-hide {
+    top: 100%;
 }
